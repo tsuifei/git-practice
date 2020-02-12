@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Template Syntax</title>
+</head>
+<div id="app">
+  <p>{{ name }}</p>
+  <p>{{ name.toUpperCase() }}</p>
+  <p>{{ name.split('').reverse().join('') }}</p>
+  <p>{{ isName ? `Your Name is ${name}` : `Name not good`}}</p>
+
+  <p v-html="msg"></p>
+  <input placeholder="enter your name">
+
+</div>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        name: 'Tracy',
+        isName: false,
+        msg: '<h2>Today is good day</h2>'
+      }
+    })
+  </script>
+</body>
+
+</html>
