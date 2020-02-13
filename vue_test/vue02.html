@@ -82,18 +82,18 @@
         // 更新 fullName2
         this.fullName2 = value + '-' + this.lastName
       },
-      lastName: function (value) {
-        this.fullName2 = this.firstName + '-' + value
-      }
+      // lastName: function (value) {
+      //   this.fullName2 = this.firstName + '-' + value
+      // }
 
     }
   })
   // 實例的方法都是以 $ 開頭 第一參數監聽對象 第二參數callback函式
-  // vm.$watch('lastName', function (value) {
-  //   console.log('watch lastName', value);
-  //   // 更新 fullName2
-  //   this.fullName2 = this.firstName + ' ' + value
-  // })
+  vm.$watch('lastName', function (value) {
+    console.log('watch lastName', value);
+    // 更新 fullName2
+    this.fullName2 = this.firstName + ' ' + value
+  })
 
   /*
   callback 函式需滿足三個條件：
