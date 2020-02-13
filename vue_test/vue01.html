@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Template Syntax</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vue Template Syntax</title>
-</head>
-<div id="app">
-  <p v-html="msg"></p>
+  <body>
+    <div id="app">
+      <p v-html="msg"></p>
 
-  <p>My name is {{ name }}</p>
-  <p>{{ name.toUpperCase() }}</p>
-  <p>{{ name.split('').reverse().join('') }}</p>
-  <p>{{ isName ? `Your Name is ${name}` : `Name not good ou null` }}</p>
-  <p v-bind:name="'list-' + name + sayHi"></p>
+      <p>My name is {{ name }}</p>
+      <p>{{ name.toUpperCase() }}</p>
+      <p>{{ name.split('').reverse().join('') }}</p>
+      <p>{{ isName ? `Your Name is ${name}` : `Name not good ou null` }}</p>
+      <p v-bind:name="'list-' + name + sayHi"></p>
 
-  <input v-model="name" placeholder="Write your name">
-  <img v-bind:src="imgUrl" alt="">
-  <button @click="showHi(sayHi)">click</button>
+      <input v-model="name" placeholder="Write your name" />
+      <img v-bind:src="imgUrl" alt="" />
+      <button @click="showHi(sayHi)">click</button>
+    </div>
 
-</div>
-
-<body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
-  <script>
-    const vm = new Vue({
-      el: '#app',
-      data: {
-        name: 'Tracy',
-        isName: true,
-        msg: '<h2>Today is good day</h2>',
-        imgUrl: 'https://cn.vuejs.org/images/logo.png',
-        sayHi: 'Hi Paris'
-
-      },
-      methods: {
-        showHi(sayHi) {
-          alert(sayHi)
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    <script>
+      const vm = new Vue({
+        el: '#app',
+        data: {
+          name: 'Tracy',
+          isName: true,
+          msg: '<h2>Today is good day</h2>',
+          imgUrl: 'https://cn.vuejs.org/images/logo.png',
+          sayHi: 'Hi Paris'
+        },
+        methods: {
+          showHi(sayHi) {
+            alert(sayHi);
+          }
         }
-      }
-    })
-  </script>
-</body>
-
+      });
+    </script>
+  </body>
 </html>
