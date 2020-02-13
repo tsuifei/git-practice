@@ -9,14 +9,14 @@
 <div id="app">
   <p v-html="msg"></p>
 
-  <p>{{ name }}</p>
+  <p>My name is {{ name }}</p>
   <p>{{ name.toUpperCase() }}</p>
   <p>{{ name.split('').reverse().join('') }}</p>
-  <p>{{ isName ? `Your Name is ${name}` : `Name not good ou null`}}</p>
+  <p>{{ isName ? `Your Name is ${name}` : `Name not good ou null` }}</p>
+  <p v-bind:name="'list-' + name + sayHi"></p>
 
   <input v-model="name" placeholder="Write your name">
   <img v-bind:src="imgUrl" alt="">
-
   <button @click="showHi(sayHi)">click</button>
 
 </div>
@@ -28,7 +28,7 @@
       el: '#app',
       data: {
         name: 'Tracy',
-        isName: false,
+        isName: true,
         msg: '<h2>Today is good day</h2>',
         imgUrl: 'https://cn.vuejs.org/images/logo.png',
         sayHi: 'Hi Paris'
