@@ -26,8 +26,16 @@
 
 
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
   <script>
+    // 若是沒有開啟Devtools工具，在開發環境中開啟，在生產環境中關閉
+    // if (process.env.NODE_ENV == 'development') {
+    //   Vue.config.devtools = true;
+    // } else {
+    //   Vue.config.devtools = false;
+
+
     const vm = new Vue({
       el: '#app',
       data: {

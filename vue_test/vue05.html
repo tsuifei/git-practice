@@ -21,8 +21,11 @@
 
     <h2>測試 v-for 遍歷、讀取物件</h2>
     <ul>
-      <li v-for="(value, key) in persons[1]" :key="key">{{value}} -- {{key}}</li>
+      <!-- <li v-for="(value, key) in persons[1]" :key="key">{{value}} -- {{key}}</li> -->
+      <li v-for="(value, key) in persons" :key="key">{{value}} -- {{key}}</li>
     </ul>
+
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
