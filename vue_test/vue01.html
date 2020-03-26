@@ -20,6 +20,15 @@
       <img v-bind:src="imgUrl" alt="" />
       <button @click="showHi(sayHi)">click</button>
     </div>
+    <hr />
+    <div id="app2">
+      <h1>Vue Mastery Courses</h1>
+      <h2>{{product}}</h2>
+      <!-- <p v-if="inStock">in Stock</p> -->
+      <p v-if="inventory > 10">in Stock</p>
+      <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out</p>
+      <p v-else>Out of sold</p>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
     <script>
@@ -36,6 +45,15 @@
           showHi(sayHi) {
             alert(sayHi);
           }
+        }
+      });
+
+      const vm2 = new Vue({
+        el: '#app2',
+        data: {
+          product: 'Socks',
+          // inStock: true,
+          inventory: 0
         }
       });
     </script>
